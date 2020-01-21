@@ -5,9 +5,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="com.example.practice.board.mapper.BoardMapper">
  
-    <select id="boardCount" resultType="int">
-        SELECT
-            COUNT(*)
-        FROM BOARD
+	<select id="findByIdx" parameterType="Integer" resultType="com.example.practice.board.domain.BoardVO">
+        SELECT * FROM BOARD WHERE bno = #{bno}
     </select>
+        
+    <select id="countBoard" resultType="Integer">
+    	SELECT COUNT(*) FROM BOARD
+    </select>
+    
+    <insert id="insertBoard" parameterType="com.example.practice.board.domain.BoardVO">
+    	INSERT INTO BOARD(title, content) VALUES (#{title}, #{content})
+    </insert>
+    
+    <delete id="deleteBoard">
+        DELETE FROM BOARD
+        WHERE bno = #{bno};
+    </delete>
+
+    <update id="updateBoard" parameterType="com.example.practice.board.domain.BoardVO">
+        UPDATE BOARD
+        SET title = #{title}, content = #{content}
+        WHERE bno = #{bno}
+    </update>
+    
 </mapper>
