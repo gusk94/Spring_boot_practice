@@ -8,6 +8,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findByIdx" parameterType="Integer" resultType="com.example.practice.board.domain.BoardVO">
         SELECT * FROM BOARD WHERE bno = #{bno}
     </select>
+    
+    <select id="findAll" resultType="com.example.practice.boaard.domain.BoardVO">
+    	SELECT * FROM BOARD
+    </select>
         
     <select id="countBoard" resultType="Integer">
     	SELECT COUNT(*) FROM BOARD

@@ -6,6 +6,7 @@ import com.example.practice.board.domain.BoardVO;
 
 public interface BoardService {
 	public List<BoardVO> findByIdx(int bno);
+	public List<BoardVO> findAll();
 	
 	public int countBoard();
 	public void insertBoard(BoardVO board);

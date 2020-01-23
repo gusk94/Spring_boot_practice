@@ -28,8 +28,10 @@ public class BoardController {
 	
 	@GetMapping("/test")
 	public ModelAndView Test() {
-		List<BoardVO> boardList = boardService.findByIdx(1);
-		ModelAndView nxtPage = new ModelAndView("board/test");
+//		List<BoardVO> boardList = boardService.findByIdx(1);
+		List<BoardVO> boardList = boardService.findAll();
+// 		ModelAndView nxtPage = new ModelAndView("board/test");
+		ModelAndView nxtPage = new ModelAndView("board/main");
 		nxtPage.addObject("boardList", boardList);
 		return nxtPage;
 	}
