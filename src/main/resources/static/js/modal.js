@@ -59,9 +59,8 @@ $(document).ready(function(){
 			url : url,
 			type : type,
 			data : data,
-			success: function(data){ $("myModal").modal('toggle')},
-			complete: function(data){ location.reload();}
 		})
+		location.reload();
 	})
 })
 

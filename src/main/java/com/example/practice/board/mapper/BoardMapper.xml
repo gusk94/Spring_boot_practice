@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         SELECT * FROM BOARD WHERE bno = #{bno}
     </select>
     
-    <select id="findAll" resultType="com.example.practice.boaard.domain.BoardVO">
+    <select id="findAll" resultType="com.example.practice.board.domain.BoardVO">
     	SELECT * FROM BOARD
     </select>
         

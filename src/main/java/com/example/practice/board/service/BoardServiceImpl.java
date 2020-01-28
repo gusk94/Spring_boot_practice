@@ -21,7 +21,7 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public List<BoardVO> findAll() {
-		return boardMapper.findALl();
+		return boardMapper.findAll();
 	}
 	
 	@Override

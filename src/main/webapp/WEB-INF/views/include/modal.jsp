@@ -30,4 +30,3 @@
 		</div>
 	</div>
 </div>
-<script src="modal.js"></script>
