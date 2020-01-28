@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<!-- jstl 따로 설치 후 webapp -> WEB-INF  -> lib 에 추가 해야 사용 가능 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -24,6 +25,7 @@
 				</tr>
 			</thead>
 			<tbody>
+			<!-- jstl 설치 후 사용 가능한 for 문 -->
 				<c:forEach var="board" items="${boardList}">
 					<tr id="tr${board.bno}">
 						<td>${board.bno}</td>
