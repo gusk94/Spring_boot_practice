@@ -1,6 +1,8 @@
 package com.example.practice.board.controller;
 
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 //import javax.annotation.Resource;
 //import javax.servlet.http.HttpServletRequest;
@@ -23,17 +25,25 @@ import com.example.practice.board.service.BoardService;
 @Controller
 public class BoardController {
 	
+	private static Logger logger = LoggerFactory.getLogger(BoardController.class);
+	
 	@Autowired
-	BoardService boardService;
+	private BoardService boardService;
 	
 	@GetMapping("/test")
 	public ModelAndView Test() {
-//		List<BoardVO> boardList = boardService.findByIdx(1);
 		List<BoardVO> boardList = boardService.findAll();
-// 		ModelAndView nxtPage = new ModelAndView("board/test");
 		ModelAndView nxtPage = new ModelAndView("board/main");
 		nxtPage.addObject("boardList", boardList);
 		return nxtPage;
+	}
+	
+	@GetMapping("/test/{bno}")
+	public ModelAndView findOne(@PathVariable("bno") int bno) throws Exception{
+		ModelAndView idxPage = new ModelAndView("board/index");
+		BoardVO board = boardService.findByIdx(bno);
+		idxPage.addObject("board", board);
+		return idxPage;
 	}
 		
 	@RequestMapping("/count")
@@ -44,16 +54,19 @@ public class BoardController {
 	
 	@PostMapping("/insert")
 	public void create(BoardVO board) throws Exception {
+		logger.info("POST /board : " + board.toString());
 		boardService.insertBoard(board);
 	}
 	
 	@PutMapping("/update")
 	public void update(BoardVO board) throws Exception {
+		logger.info("PUT data : " + board.toString());
 		boardService.updateBoard(board);
 	}
 	
 	@DeleteMapping("/delete/{bno}")
 	public void delete(@PathVariable("bno") int bno) throws Exception {
+		logger.info("DELETE bno : " + bno);
 		boardService.deleteBoard(bno);
 	}
 

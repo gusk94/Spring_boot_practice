@@ -5,7 +5,7 @@ import java.util.List;
 import com.example.practice.board.domain.BoardVO;
 
 public interface BoardService {
-	public List<BoardVO> findByIdx(int bno);
+	public BoardVO findByIdx(int bno);
 	public List<BoardVO> findAll();
 	
 	public int countBoard();

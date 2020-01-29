@@ -7,7 +7,7 @@ import com.example.practice.board.domain.BoardVO;
 
 @Mapper
 public interface BoardMapper {
-	public List<BoardVO> findByIdx(int bno);
+	public BoardVO findByIdx(int bno);
 	public List<BoardVO> findAll();
 	
 	public int countBoard();

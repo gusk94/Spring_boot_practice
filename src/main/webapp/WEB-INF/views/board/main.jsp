@@ -30,7 +30,7 @@
 				<c:forEach var="board" items="${boardList}">
 					<tr id="tr${board.bno}">
 						<td>${board.bno}</td>
-						<td><a href="#">${board.title}</a></td>
+						<td><a href="/test/${board.bno}">${board.title}</a></td>
 						<td>${board.content}</td>
 						<td>
 							<div class="btn-group">

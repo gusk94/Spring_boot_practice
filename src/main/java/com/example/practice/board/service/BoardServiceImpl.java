@@ -15,7 +15,7 @@ public class BoardServiceImpl implements BoardService {
 	BoardMapper boardMapper;
 	
 	@Override
-	public List<BoardVO> findByIdx(int bno) {
+	public BoardVO findByIdx(int bno) {
 		return boardMapper.findByIdx(bno);
 	}
 	
