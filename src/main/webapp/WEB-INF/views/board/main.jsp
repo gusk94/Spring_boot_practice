@@ -34,9 +34,9 @@
 						<td>${board.content}</td>
 						<td>
 							<div class="btn-group">
-								<button name="modify" value="${board.bno}"
+								<button id="modifyBtn" value="${board.bno}" 
 									class="btn btn-xs btn-warning">수정</button>
-								<button name="delete" value="${board.bno}"
+								<button id="deleteBtn" value="${board.bno}"
 									class="btn btn-xs btn-danger">삭제</button>
 							</div>
 						</td>

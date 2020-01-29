@@ -22,9 +22,6 @@
 		</h3>
 		<hr>
 		<h4>${board.content}</h4>
-		<hr>
-
-		<jsp:include page="../include/modal.jsp" />
 	</div>
 </body>
 </html>
