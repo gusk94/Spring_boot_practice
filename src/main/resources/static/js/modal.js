@@ -8,35 +8,40 @@ $(document).ready(function(){
 	
 	$("#createBtn").click(function(){
 		action='create';
-		type = 'POST'
-
+		type = 'POST';
+		console.log('click')
+		
 		$("#modal-title").text("새 글 작성");
 		$("#myModal").modal();
 	});
 	
 	
-	$("#modifyBtn").click(function(){
+	$("button[name='modifyBtn']").click(function(){
 		action='modify';
 		type = 'PUT';
 		bno = this.value;
+		console.log('click')
 
+		// 부모요소
 		var row = $(this).parent().parent().parent();
+		// 자식요소
 		var tr = row.children();
 		
-		var title = tr.eq(2).text();
-		var content = tr.eq(1).text();
+		var title = tr.eq(1).text();
+		var content = tr.eq(2).text();
 
 		$("#modal-title").text("수정하기");
 
 		$("#title").val(title);
-		$("#content").val(content);
+		$("#content").val(content)
 		
 		$("#myModal").modal();
 	});
 	
 
-	$("#deleteBtn").click(function(){
+	$("button[name='deleteBtn']").click(function(){
 		bno = this.value;
+		console.log('click')
 		$.ajax({
 			url : '/delete/' + bno,
 			type : 'DELETE',
@@ -66,7 +71,6 @@ $(document).ready(function(){
 			type : type,
 			data : data
 		})
-		
 		location.reload();
 	});
 	

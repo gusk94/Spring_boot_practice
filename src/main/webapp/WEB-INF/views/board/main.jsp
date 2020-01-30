@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- modal -->
 	<script type="text/javascript" src="/js/modal.js"></script>
 	<title>Board</title>
 </head>
@@ -20,8 +21,8 @@
 			<thead>
 				<tr>
 					<th class="col-md-1">bno</th>
-					<th class="col-md-7">title</th>
-					<th class="col-md-2">content</th>
+					<th class="col-md-2">title</th>
+					<th class="col-md-7">content</th>
 					<th class="col-md-2">수정 / 삭제</th>
 				</tr>
 			</thead>
@@ -34,9 +35,10 @@
 						<td>${board.content}</td>
 						<td>
 							<div class="btn-group">
-								<button id="modifyBtn" value="${board.bno}" 
+								<!-- id 대신 name : 모든 board에 대해서 버튼입력이 가능하도록 하기 위해서 -->
+								<button name="modifyBtn" value="${board.bno}" 
 									class="btn btn-xs btn-warning">수정</button>
-								<button id="deleteBtn" value="${board.bno}"
+								<button name="deleteBtn" value="${board.bno}"
 									class="btn btn-xs btn-danger">삭제</button>
 							</div>
 						</td>
